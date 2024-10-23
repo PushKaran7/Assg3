@@ -1,0 +1,45 @@
+
+.odd-row {
+    background-color: #f9f9f9;
+  }
+  
+  .even-row {
+    background-color: #f1f1f1;
+  }
+  
+  .completed-task {
+    text-decoration: line-through;
+    color: grey;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:500px;
+    justify-content: space-between;
+    
+  }
+  .list-group{
+    margin-top: 30px;
+    align-items: center;
+    margin-bottom: 30px;
+    border:1px solid #ced4da;
+    width:700px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+   
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+
+  }
+  .list-group-item{
+    background-color: #fff; /* Light background for the list items */
+     color: #495057;
+    border-radius:20px;
+    border: 1px solid #d1e7dd;
+  }

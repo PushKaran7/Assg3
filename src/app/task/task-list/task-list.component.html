@@ -1,0 +1,26 @@
+<div class="list-group">
+    <h2>Item-List</h2>
+<div  class="list-group-item" *ngFor="let task of tasks;let i = index" [ngClass]="{'completed-task':task.statusval==='complete'}"
+    [ngStyle]="{'background-color':task.statusval==='complete'?'lightgreen':' #f0f8ff'}"
+    [ngClass]="{'odd-row':i%2!=0,'even-row':i%2===0}" class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center">
+        <span>{{task.title}}</span>
+
+        <span *ngIf="task.statusval==='complete'">&nbsp;&nbsp;<i class="fa-solid fa-check" style="color: #B197FC;"></i></span>
+    
+        <ng-container [ngSwitch]="task.type">
+            <span *ngSwitchCase="'urgent'">&nbsp;&nbsp;<i class="fa-solid fa-fire fa-fade" style="color: #f70860;"></i></span>
+            <span *ngSwitchCase="'normal'"> &nbsp;&nbsp;<i class="fa-solid fa-bell fa-shake" style="color: #1964e6;"></i></span>
+            <span *ngSwitchCase="'low'">&nbsp;&nbsp;<i class="fa-solid fa-book" style="color: #430ee1;"></i></span>
+            <span *ngSwitchDefault>&nbsp;&nbsp;📋</span>
+        </ng-container>
+    </div>
+        <div>
+            <button  class="btn btn-danger" (click)="completeTask(task)" [disabled]="task.statusval === 'complete'">Complete</button>
+        </div>
+      
+    </div>
+
+   
+</div>
